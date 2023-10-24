@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <input v-model="var1" />
+      <input v-model="var2" />
+      <button v-on:click="hasil=parseFloat(var1) + parseFloat(var2)">+</button>
+      <button v-on:click="hasil=parseFloat(var1) - parseFloat(var2)">-</button>
+      <button v-on:click="hasil=parseFloat(var1) * parseFloat(var2)">*</button>
+      <button v-on:click="hasil=parseFloat(var1) / parseFloat(var2)">/</button>
+      {{ hasil }}
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
