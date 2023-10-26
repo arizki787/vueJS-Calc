@@ -1,22 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
-  </head>
-
-  <body>
-    <div id="app">
-      <input v-model="var1" />
-      <input v-model="var2" />
-      <button v-on:click="hasil=parseFloat(var1) + parseFloat(var2)">+</button>
-      <button v-on:click="hasil=parseFloat(var1) - parseFloat(var2)">-</button>
-      <button v-on:click="hasil=parseFloat(var1) * parseFloat(var2)">*</button>
-      <button v-on:click="hasil=parseFloat(var1) / parseFloat(var2)">/</button>
-      {{ hasil }}
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator-vue</title>
+    <link rel="stylesheet" href="calcStyle.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="calculator">
+                <h1>Casio.</h1>
+                <form>
+                    <div id="app">      
+                        <div class="display">
+                            <input type="text" name="display" v-model="display">
+                        </div>
+                        <div>
+                            <input type="button" value="AC" @click="allClear()" class="operator">
+                            <input type="button" value="DE"  @click="deleting()" class="operator">
+                            <input type="button" value="." @click="appendToDisplay('.')">
+                            <input type="button" value="/" @click="appendToDisplay('/')" class="operator">
+                        </div>
+                        <div>
+                            <input type="button" value="7" @click="appendToDisplay('7')">
+                            <input type="button" value="8" @click="appendToDisplay('8')">
+                            <input type="button" value="9" @click="appendToDisplay('9')">
+                            <input type="button" value="*" @click="appendToDisplay('*')" class="operator">
+                        </div>
+                        <div>
+                            <input type="button" value="4" @click="appendToDisplay('4')">
+                            <input type="button" value="5" @click="appendToDisplay('5')">
+                            <input type="button" value="6" @click="appendToDisplay('6')">
+                            <input type="button" value="-" @click="appendToDisplay('-')" class="operator">
+                        </div>
+                        <div>
+                            <input type="button" value="1" @click="appendToDisplay('1')">
+                            <input type="button" value="2" @click="appendToDisplay('2')">
+                            <input type="button" value="3" @click="appendToDisplay('3')">
+                            <input type="button" value="+" @click="appendToDisplay('+')" class="operator">
+                        </div>
+                        <div>
+                            <input type="button" value="00" @click="appendToDisplay('00')">
+                            <input type="button" value="0" @click="appendToDisplay('0')">
+                            <input type="button" value="=" class="equal" @click="evaluate()" class="operator">
+                        </div>
+                        <!-- @click="appendToDisplay('')" -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue</title>
+</head>
+<body>
+    
+<div id="app">
+    <button @click="increment()">count is: {{ count }}</button>
+</div>
+    
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html> -->

@@ -1,11 +1,23 @@
-const { createApp, ref } = Vue
+const {createApp} = Vue
 
 createApp({
-  data(){
-    return{
-      var1 : 0,
-      var2 : 0,
-      result : 0
+    data() {
+        return {
+            display:''
+        }
+    },
+    methods: {
+        appendToDisplay(num) {
+            this.display += num;
+        },
+        evaluate(){
+            this.display = eval(this.display)
+        },
+        allClear(){
+            this.display = ''
+        },
+        deleting(){
+            this.display = this.display.toString().slice(0, -1)
+        }
     }
-  }
 }).mount('#app')
