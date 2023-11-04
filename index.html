@@ -8,11 +8,13 @@
 </head>
 <body>
     <main>
-        <div class="container">
-            <div class="calculator">
-                <h1>Casio.</h1>
+        <div id="app" class="container">
+            <div class="calculator" v-if="kondisi === 'kalkulator'">
+                <div class="content-title" @click="changeKondisi('jadwal')">
+                    <h1>Casio.</h1>
+                </div>
                 <form>
-                    <div id="app">      
+                    <div>      
                         <div class="display">
                             <input type="text" name="display" v-model="display">
                         </div>
@@ -45,33 +47,25 @@
                             <input type="button" value="0" @click="appendToDisplay('0')">
                             <input type="button" value="=" class="equal" @click="evaluate()" class="operator">
                         </div>
-                        <!-- @click="appendToDisplay('')" -->
+
                     </div>
                 </form>
             </div>
+            <div class="calculator" v-else id="app">
+                <div class="content-title" @click="changeKondisi('kalkulator')">
+                    <h1>Jadwal</h1>
+                </div>
+                <div class="content-jadwal">
+                    <h3>{{matkul1}}</h3>
+                    <h3>{{matkul2}}</h3>
+                    <h3>{{matkul3}}</h3>
+                    <h3>{{matkul4}}</h3>
+                </div>
+            </div>
         </div>
+
     </main>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
-
-<!-- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vue</title>
-</head>
-<body>
-    
-<div id="app">
-    <button @click="increment()">count is: {{ count }}</button>
-</div>
-    
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script src="app.js"></script>
-
-</body>
-</html> -->

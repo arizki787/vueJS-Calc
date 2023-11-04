@@ -1,9 +1,15 @@
-const {createApp} = Vue
+const {createApp, ref} = Vue
 
 createApp({
     data() {
         return {
-            display:''
+            display:'',
+            kondisi: ref("kalkulator"),
+            message: "Mata Kuliah Selasa",
+            matkul1: "Pemrograman Web - Ridho Rahman",
+            matkul2: "Konsep Pengembangan Perangkat Lunak - Hatma Surotrisongko",
+            matkul3: "Smart City - M husni",
+            matkul4: "Internet of Things - M Husni"
         }
     },
     methods: {
@@ -18,6 +24,10 @@ createApp({
         },
         deleting(){
             this.display = this.display.toString().slice(0, -1)
+        },
+
+        changeKondisi(val){
+            this.kondisi = val;
         }
     }
 }).mount('#app')
